@@ -35,8 +35,8 @@ public class C_ChatActivity extends AppCompatActivity
     @Inject
     C_PermissionsHelper permissionsHelper;
 
+    //init bluetooth
     BluetoothAdapter bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
-
     Set<BluetoothDevice> pairedDevices = bluetoothAdapter.getBondedDevices();
 
     @Override
