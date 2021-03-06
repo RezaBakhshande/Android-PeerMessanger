@@ -7,11 +7,11 @@ import dagger.Module;
 import dagger.Provides;
 
 @Module
-public class ContextModel
+public class C_ContextModel
 {
     private Context context;
 
-    public ContextModel(Context context)
+    public C_ContextModel(Context context)
     {
         this.context=context;
     }
