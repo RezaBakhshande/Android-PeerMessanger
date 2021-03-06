@@ -15,7 +15,7 @@ import java.util.List;
 public class C_AvailableDeviceRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
 {
     private List<C_DeviceModel> deviceModels;
-    private final I_OnItemListener onItemListener;
+    private I_OnItemListener onItemListener;
 
     public C_AvailableDeviceRecyclerViewAdapter(I_OnItemListener onItemListener)
     {
