@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">BluetoothMessenger</string>
+    <string name="menuBluetoothOn">Turn on Bluetooth</string>
+    <string name="menuAvailableDevices">Available Devices</string>
+    <string name="textviewPairedDevices">Paired Devices</string>
+    <string name="textviewDeviceName">Device Name</string>
+    <string name="textviewDeviceStatus">Saved</string>
+</resources>
