@@ -12,9 +12,8 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
 
-import com.macroid.bluetoothmessenger.di.components.DaggerComponent;
+import com.macroid.bluetoothmessenger.di.components.DaggerIChatActivityComponent;
 import com.macroid.bluetoothmessenger.di.models.C_BluetoothModelDagger;
 import com.macroid.bluetoothmessenger.di.models.C_PermissionHelperModelDagger;
 import com.macroid.bluetoothmessenger.models.C_BluetoothModel;
@@ -107,7 +106,7 @@ public class C_ChatActivity extends AppCompatActivity
     //This method for implimentation dagger2
     private void F_DaggerImplimentation()
     {
-        DaggerComponent.builder()
+        DaggerIChatActivityComponent.builder()
                 .c_BluetoothModelDagger(new C_BluetoothModelDagger(bluetoothAdapter, pairedDevices))
                 .c_PermissionHelperModelDagger(new C_PermissionHelperModelDagger(this))
                 .build()
