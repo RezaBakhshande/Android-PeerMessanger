@@ -13,7 +13,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.macroid.bluetoothmessenger.di.components.DaggerIChatActivityComponent;
+import com.macroid.bluetoothmessenger.di.components.DaggerI_ChatActivityComponent;
 import com.macroid.bluetoothmessenger.di.models.C_BluetoothModelDagger;
 import com.macroid.bluetoothmessenger.di.models.C_PermissionHelperModelDagger;
 import com.macroid.bluetoothmessenger.models.C_BluetoothModel;
@@ -69,7 +69,8 @@ public class C_ChatActivity extends AppCompatActivity
                         @Override
                         public void F_Accepted()
                         {
-                            startActivity(new Intent(getApplicationContext(),C_DeviceListActivity.class));
+                            startActivity(new Intent(getApplicationContext(), C_DeviceListActivity.class));
+                            finish();
                         }
 
                         @Override
@@ -79,7 +80,8 @@ public class C_ChatActivity extends AppCompatActivity
                         }
                     });
                     Toast.makeText(getApplicationContext(), "Start Searching Devices", Toast.LENGTH_SHORT).show();
-                    startActivity(new Intent(getApplicationContext(),C_DeviceListActivity.class));
+                    startActivity(new Intent(getApplicationContext(), C_DeviceListActivity.class));
+                    finish();
                     //bluetoothModel.F_ParedDeviceList(getApplicationContext());
                 } else
                 {
@@ -88,10 +90,10 @@ public class C_ChatActivity extends AppCompatActivity
 
 
                 return true;
-                case R.id.menuEnableBluetooth:
-                if (bluetoothModel.F_IsDeviceSupportBluetooth())
+            case R.id.menuEnableBluetooth:
+                if (bluetoothModel.F_IsDeviceSupportBluetooth(bluetoothAdapter))
                 {
-                    bluetoothModel.F_EnableBluetooth(this);
+                    bluetoothModel.F_EnableBluetooth(C_ChatActivity.this, bluetoothAdapter);
                 } else
                 {
                     Toast.makeText(this, "Device doesn't support Bluetooth", Toast.LENGTH_SHORT).show();
@@ -106,8 +108,8 @@ public class C_ChatActivity extends AppCompatActivity
     //This method for implimentation dagger2
     private void F_DaggerImplimentation()
     {
-        DaggerIChatActivityComponent.builder()
-                .c_BluetoothModelDagger(new C_BluetoothModelDagger(bluetoothAdapter, pairedDevices))
+        DaggerI_ChatActivityComponent.builder()
+                .c_BluetoothModelDagger(new C_BluetoothModelDagger())
                 .c_PermissionHelperModelDagger(new C_PermissionHelperModelDagger(this))
                 .build()
                 .Inject(this);
