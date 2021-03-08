@@ -26,7 +26,7 @@ public class C_AvailableDeviceRecyclerViewAdapter extends RecyclerView.Adapter<R
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType)
     {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.recycler_item,
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.recycler_available_item,
                 parent, false);
         return new C_AvailableDeviceRecyclerViewHolder(view, onItemListener);
     }
