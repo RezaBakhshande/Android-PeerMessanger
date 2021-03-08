@@ -5,4 +5,5 @@
     <string name="textviewPairedDevices">Paired Devices</string>
     <string name="textviewDeviceName">Device Name</string>
     <string name="textviewDeviceStatus">Saved</string>
+    <string name="textviewAvailableDevices">AVAILABLE DEVICES</string>
 </resources>
