@@ -17,20 +17,20 @@ public class C_BluetoothModelDagger
     BluetoothAdapter bluetoothAdapter;
     Set<BluetoothDevice> pairedDevices;
 
-    public C_BluetoothModelDagger(BluetoothAdapter bluetoothAdapter, Set<BluetoothDevice> pairedDevices)
+    public C_BluetoothModelDagger(/*BluetoothAdapter bluetoothAdapter, Set<BluetoothDevice> pairedDevices*/)
     {
-        this.bluetoothAdapter = bluetoothAdapter;
-        this.pairedDevices = pairedDevices;
+        /*this.bluetoothAdapter = bluetoothAdapter;
+        this.pairedDevices = pairedDevices;*/
     }
 
     @MainScope
     @Provides
-    public C_BluetoothModel F_GetBluetoothModel(BluetoothAdapter bluetoothAdapter , Set<BluetoothDevice> pairedDevices)
+    public C_BluetoothModel F_GetBluetoothModel(/*BluetoothAdapter bluetoothAdapter , Set<BluetoothDevice> pairedDevices*/)
     {
-        return new C_BluetoothModel(bluetoothAdapter ,pairedDevices);
+        return new C_BluetoothModel();
     }
 
-    @MainScope
+   /* @MainScope
     @Provides
     public BluetoothAdapter F_GetBluetoothAdapter()
     {
@@ -42,5 +42,5 @@ public class C_BluetoothModelDagger
     public Set<BluetoothDevice> F_GetPairedDevices()
     {
         return pairedDevices;
-    }
+    }*/
 }
