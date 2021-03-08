@@ -24,11 +24,4 @@ public class C_RecyclerViewAvailableDeviceModelDagger
     {
         return new C_AvailableDeviceRecyclerViewAdapter(onItemListener);
     }
-
-
-    public I_OnItemListener F_GetonItemListener()
-    {
-        return onItemListener;
-    }
-    
 }
