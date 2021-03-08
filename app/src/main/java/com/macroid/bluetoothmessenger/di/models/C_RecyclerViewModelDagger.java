@@ -27,7 +27,7 @@ public class C_RecyclerViewModelDagger
 
     @MainScope
     @Provides
-    public I_OnItemListener getonItemListener()
+    public I_OnItemListener F_GetonItemListener()
     {
         return onItemListener;
     }
